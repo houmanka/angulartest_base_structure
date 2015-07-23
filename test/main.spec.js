@@ -1,5 +1,14 @@
+var assert = chai.assert;
+var expect = chai.expect;
+
 describe("The AddressBook App", function(){
-    it('should work', function(){
-        chai.assert.isArray([]);
+    describe("The contact service", function(){
+        it("Should have a contact property", function(){
+            module('AddressBook')
+            inject(function($injector){
+                contactService = $injector.get("contactService");
+            });
+            expect(contactService.contacts).to.be.an('array');
+        })
     })
 });
